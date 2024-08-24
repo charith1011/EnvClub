@@ -1,0 +1,315 @@
+html{
+    height: 100%;
+}
+
+body{
+    background-color: rgba(170, 255, 176, 0.344);
+    background-size: cover;
+    background-position: center;
+}
+
+
+header{
+    height: 120px;
+    text-align: center;
+    padding-bottom: 80px;
+    background-image:url(images/toplogo.png);
+}
+
+nav {
+    
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    position: relative; 
+    width:100%;
+}
+
+.nav-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(0, 0, 0); 
+}
+
+
+.logo {
+    width: 80px; 
+    height: 80px;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    transform: translateX(30%);
+}
+
+
+main{
+    height: auto;
+    text-align: center;
+    padding-top: 60px;
+    padding-left: 240px;
+    padding-right: 240px;
+}
+
+
+h1{
+    font-size: 40px;
+    color:rgba(0, 0, 0, 0.708);
+    font-family:'Times New Roman', Times, serif;
+} 
+
+h2{
+    font-size: 18px;
+    color:darkgreen;
+    font-family:'Times New Roman', Times, serif;
+} 
+
+a{
+    color:white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+nav a {
+
+    text-decoration: none;
+    color:white;
+    font-size: 12px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+
+.aboutus{
+    height: auto;
+    background-color:rgba(170, 255, 176, 0.288);;
+}
+
+footer {
+    background-color: #333333ea; /* Dark background color for the footer */
+    color: #fff; /* White text color */
+    padding: 20px; /* Add padding to the footer */
+    text-align: center; /* Center align the footer content */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+}
+
+.contact-info, .social-links {
+    margin: 0 20px; /* Add margin between sections */
+}
+
+.contact-info h3, .social-links h3 {
+    margin-bottom: 10px; /* Add space below headings */
+}
+
+.social-links ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+}
+
+.social-links ul li {
+    margin-bottom: 5px; /* Add space between social links */
+}
+
+.social-links ul li a {
+    color: #fff; /* White color for social links */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.social-links ul li a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+.copyright {
+    margin-top: 20px; /* Add space above copyright */
+}
+
+.aboutus h1{
+    color:black; 
+    text-align: center;
+    text-decoration:double;
+}
+
+
+.map{
+    float:right;
+}
+
+.officers{
+    font-size: 20px;
+    color:black;
+    font-family:'Times New Roman', Times, serif;
+} 
+
+.main1{
+    padding-top: 60px;
+
+}
+
+/* Add these styles to your existing CSS */
+
+.members-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line if there's not enough space */
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+    gap: 20px; /* Space between each member */
+}
+
+/* General styling for individual members */
+.preetham,
+.ishita,
+.roma,
+.anushka,
+.harshil,
+.anyu,
+.aniket{
+    width: 250px; /* Set a fixed width for consistency */
+    text-align: center; /* Center the content horizontally */
+    margin-bottom: 20px; /* Space between rows */
+    display: flex;
+    flex-direction: column; /* Arrange image and name vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+/* Adjust image size */
+.members-container img {
+    width: 250px;
+    height: 250px; /* Set a fixed height for all images */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+    border-radius: 50%; /* Make the image round */
+    margin-bottom: 10px; /* Space between image and name */
+}
+
+.harshil img{
+    object-position: center top; /* Center the image vertically */
+
+}
+
+.perry img{
+    object-position: top top;
+}
+
+/* Style adjustments for officer names */
+.officers {
+    margin-top: 20px; /* Space between image and name */
+    font-size: 18px; /* Adjusting font size for better appearance */
+    font-weight: bold; /* Making the position titles bold for emphasis */
+    color: #333; /* Darker color for better readability */
+}
+
+.officers a {
+    color: black;  /* Set the link color to black */
+    text-decoration: none; /* Optional: Removes the underline from the links */
+}
+
+.officers a:hover {
+    text-decoration: underline; /* Optional: Adds underline when hovering over the links */
+}
+
+.social-section {
+    flex: 0 0 calc(33.33% - 20px); /* Adjust based on the number of items and desired spacing */
+    text-align: center; 
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(11, 177, 22, 0.968); 
+    transition: background-color 0.3s ease;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    color: rgb(255, 255, 255);
+}
+
+.social-section:not(:last-child) {
+    margin-right: 20px; /* Space between each social section */
+}
+
+.social-section:hover {
+    background-color: #e0c2c2; /* Slightly darker background on hover */
+}
+
+.social-section a {
+    text-decoration: none;
+}
+
+.social-section img {
+    width: 24px; 
+    height: auto;
+    margin-right: 10px; 
+    vertical-align: middle; 
+}
+
+.galleryimages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.galleryimages img {
+    width: calc(25% - 10px); /* Adjust the width of each image to fit four images in a row with space */
+    margin: 5px; /* Adjust the margin to add space around each image */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.iframe-container {
+    text-align: center;
+    padding-top: 50px;
+    
+}
+
+.admin-link {
+    float: right;
+}
+
+.admin-link img {
+    width: 50px; /* Adjust the width as needed */
+    margin-top: -15px; 
+}
+
+.admin-panel {
+    text-align: center;
+}
+
+
+#post {
+    text-align: center; /* Center the content horizontally */
+}
+
+@media only screen and (max-width: 767px) {
+    header,
+    nav,
+    main,
+    footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+#lgmSlides{
+    text-align: center;
+}
+
+.admin-panel a {
+    color: blue; 
+    text-decoration: none; /* Remove default underline */
+}
+
+a:hover, a:active {
+    text-decoration: underline; /* Add underline on hover and when active (clicked) */
+}
+
+#bat{
+    margin-top: 100px;
+    color: transparent;
+}
+
+.admin-content{
+    text-align: center;
+}

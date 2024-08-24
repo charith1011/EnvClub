@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+    <title>Env Club</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add custom CSS for the mobile menu */
+        .menu-toggle {
+            display: none; /* Hide the menu toggle button by default */
+        }
+
+        .menu-toggle-box {
+            width: 50px;
+            height: 50px;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .nav-text {
+            color: #fff;
+            font-size: 12px;
+        }
+
+        @media screen and (max-width: 768px) {
+            /* Show the menu toggle button only on small screens */
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none; /* Hide the nav menu by default on small screens */
+            }
+
+            nav.active {
+                display: block; /* Show the nav menu when active class is added */
+            }
+
+            nav a {
+                display: block;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+ 
+    <header>
+        
+    </header>
+
+    <nav>
+        <img class="logo" src="images/logo.png" alt=" Logo Image">
+        <a href="index.html">HOME</a>
+        <a href="events.html">EVENTS</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="resources.html">RESOURCES</a>
+        <a class="admin-link" href="admin.html">
+            <img src="images/admin.png" alt="Admin Image"> 
+        </a>  
+    </nav>
+
+        <!-- Add a menu toggle button -->
+    <div class="menu-toggle">
+        <div class="menu-toggle-box">
+            <span class="nav-text">NAV</span>
+        </div>
+    </div>
+
+    <div class="iframe-container">
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FIndiana%2FIndianapolis&bgcolor=%23aaffb0&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&src=MGFiMWNhZTI4MzZkMDcxNmVhZjgzODFkZDYwZjJiNDkwNWEzMzM0NTY1MzVkZWEzOWJiNjcxMTAwYTNmY2QyZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23EF6C00" 
+         style="border-width:0" width="1200" height="800" frameborder="0" scrolling="no"></iframe>    </div>
+    
+    <script src="script.js"></script>
+
+    <script>
+        // Add JavaScript to handle the menu toggle functionality
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

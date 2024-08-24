@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+    <title>Env Club</title>
+    <link rel="stylesheet" href="style.css">
+        <style>
+        /* Add custom CSS for the mobile menu */
+        .menu-toggle {
+            display: none; /* Hide the menu toggle button by default */
+        }
+
+        .menu-toggle-box {
+            width: 50px;
+            height: 50px;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .nav-text {
+            color: #fff;
+            font-size: 12px;
+        }
+
+        @media screen and (max-width: 768px) {
+            /* Show the menu toggle button only on small screens */
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none; /* Hide the nav menu by default on small screens */
+            }
+
+            nav.active {
+                display: block; /* Show the nav menu when active class is added */
+            }
+
+            nav a {
+                display: block;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+ 
+    <header>
+        
+    </header>
+
+    <nav>
+        <img class="logo" src="images/logo.png" alt=" Logo Image">
+        <a href="index.html">HOME</a>
+        <a href="events.html">EVENTS</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="resources.html">RESOURCES</a>
+        <a class="admin-link" href="admin.html">
+            <img src="images/admin.png" alt="Admin Image"> 
+        </a>  
+    </nav>
+
+            <!-- Add a menu toggle button -->
+    <div class="menu-toggle">
+        <div class="menu-toggle-box">
+            <span class="nav-text">NAV</span>
+        </div>
+    </div>
+
+    <main>
+        <h1> CNHS Environmental Club</h1>
+        <h2> Helping the environment one print at a time!</h2>
+    </main>
+    <div style="text-align: center;">
+        <img src="images/homeTest.JPG" alt="groupPic" style="width: 80%; height: auto; margin-right: 20px; border-radius: 5px;">
+    </div>
+    
+    <div class="aboutus">
+        <h1>ABOUT US</h1>
+        <div style="display: flex; flex-direction: row; align-items: center;">
+            <img src="images/groupPic.JPG" alt="groupPic" style="width: 40%; height: auto; margin-right: 20px; border-radius: 5px;">
+            <div style="width: 60%;">
+                <p style="font-size: 16px; line-height: 1.6; text-align: justify; margin-bottom: 20px;">
+                    <strong>Welcome to the Columbus North High School Environmental Club!</strong> We are a group of passionate students dedicated to protecting and preserving the environment. Our club provides a platform for students to come together and make a difference in our school and local community.
+                </p>
+                <p style="font-size: 16px; line-height: 1.6; text-align: justify; margin-bottom: 20px;">
+                    <strong>At Columbus North High School Environmental Club,</strong> we believe that small actions can lead to big changes. Whether it's organizing campus clean-up events, implementing recycling programs, or raising awareness about environmental issues, we are committed to taking meaningful action to create a more sustainable future.
+                </p>
+                <p style="font-size: 16px; line-height: 1.6; text-align: justify; margin-bottom: 20px;">
+                    <strong>Through our various initiatives and projects,</strong> we aim to educate our peers about the importance of environmental conservation and inspire them to adopt eco-friendly habits in their daily lives. From reducing waste to promoting renewable energy, we strive to make a positive impact on our planet.
+                </p>
+                <p style="font-size: 16px; line-height: 1.6; text-align: justify;">
+                    <strong>Join us in our mission to protect the environment and promote sustainability</strong> at Columbus North High School. Together, we can make a difference and create a greener, cleaner, and more sustainable world for future generations.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>Email: cnhsenvironmental20@gmail.com</p>
+                <p>Phone: (812) 376-4431</p>
+                <p>Address: 1400 25th St, Columbus, IN 47201</p>
+            </div>
+            <div class="social-links">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="https://www.remind.com/join/cnenv">Remind</a></li>
+                    <li><a href="https://www.instagram.com/cnhs.environmental/?hl=en">Instagram</a></li>
+                    <li><a href="https://www.parentsquare.com/join_group/CNHS_Environmental_Club">ParentSqaure</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Columbus North High School Environmental Club. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    
+</div>
+    <script src="script.js"></script>
+    <script>
+        // Add JavaScript to handle the menu toggle functionality
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

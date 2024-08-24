@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+    <title>Resources</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add custom CSS for the mobile menu */
+        .menu-toggle {
+            display: none; /* Hide the menu toggle button by default */
+        }
+
+        .menu-toggle-box {
+            width: 50px;
+            height: 50px;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .nav-text {
+            color: #fff;
+            font-size: 12px;
+        }
+
+        @media screen and (max-width: 768px) {
+            /* Show the menu toggle button only on small screens */
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none; /* Hide the nav menu by default on small screens */
+            }
+
+            nav.active {
+                display: block; /* Show the nav menu when active class is added */
+            }
+
+            nav a {
+                display: block;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+
+    <nav>
+        <img class="logo" src="images/logo.png" alt=" Logo Image">
+        <a href="index.html">HOME</a>
+        <a href="events.html">EVENTS</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="resources.html">RESOURCES</a>
+        <a class="admin-link" href="admin.html">
+            <img src="images/admin.png" alt="Admin Image"> 
+        </a>  
+    </nav>
+
+    <!-- Add a menu toggle button -->
+    <div class="menu-toggle">
+        <div class="menu-toggle-box">
+            <span class="nav-text">NAV</span>
+        </div>
+    </div>
+
+    <h1 id="post">Resources</h1>
+    <div style="display: flex; justify-content: center;">
+        <iframe src="https://docs.google.com/document/d/e/2PACX-1vTp0NhdC8rpGWgJnpN_Xb0HF67z7A0hVMFuJf1Bi930oKeCYjrDRnAGgJk4jTs_fNs8v1ap0qtpcEtO/pub?embedded=true"
+        style="width: 50%; height: auto; border: none;"></iframe>
+
+    </div>          
+      
+    <div id="resourcesList"></div>
+
+    <div>
+        <h1 id="lgmSlides">LGM slides</h1>
+        <div id="lgmSlidesList"></div>
+    </div>    
+
+    <div style="display: flex; justify-content: center;">
+        <iframe src="https://docs.google.com/document/d/e/2PACX-1vS8gj4JjJTGTRc7NzpkhkFLvAPY0BqljhlIDbJ7Q-20IIDxxUtybQq291U3h9mY2gzSbZmfJSPWr_Kt/pub?embedded=true"
+            style="width: 50%; height: auto; border: none;"></iframe>
+    </div>
+
+    <h1 id="bat">    f   </h1>
+
+    <script src="resources.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // Add JavaScript to handle the menu toggle functionality
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

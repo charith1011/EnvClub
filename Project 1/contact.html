@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+    <title>Env Club</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add custom CSS for the mobile menu */
+        .menu-toggle {
+            display: none; /* Hide the menu toggle button by default */
+        }
+
+        .menu-toggle-box {
+            width: 50px;
+            height: 50px;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .nav-text {
+            color: #fff;
+            font-size: 12px;
+        }
+
+        @media screen and (max-width: 768px) {
+            /* Show the menu toggle button only on small screens */
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none; /* Hide the nav menu by default on small screens */
+            }
+
+            nav.active {
+                display: block; /* Show the nav menu when active class is added */
+            }
+
+            nav a {
+                display: block;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+ 
+    <header>
+        
+    </header>
+
+    <nav>
+        <img class="logo" src="images/logo.png" alt=" Logo Image">
+        <a href="index.html">HOME</a>
+        <a href="events.html">EVENTS</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="resources.html">RESOURCES</a>
+        <a class="admin-link" href="admin.html">
+            <img src="images/admin.png" alt="Admin Image"> 
+        </a>  
+    </nav>
+
+    <!-- Add a menu toggle button -->
+    <div class="menu-toggle">
+        <div class="menu-toggle-box">
+            <span class="nav-text">NAV</span>
+        </div>
+    </div>
+
+    <div class="main1">
+        <div class="members-container">
+            
+    <!-- Roma Sriram's section -->
+    <div class="roma">
+        <img src="images/Roma.JPG" alt="Roma Sriram">
+        <h1 class="officers">
+            <a href="mailto:25sriramr@students.bcsc.k12.in.us">President: Roma Sriram</a>
+        </h1>
+    </div>
+
+    <!-- Anushka Damle's section -->
+    <div class="anushka">
+        <img src="images/Anushka.JPG" alt="Anushka Damle">
+        <h1 class="officers">
+            <a href="mailto:25damlea@students.bcsc.k12.in.us">Co-VP: Anushka Damle</a>
+        </h1>
+    </div>
+
+    <!-- Ishita Kute's section -->
+    <div class="ishita">
+        <img src="images/Ishita.JPG" alt="Ishita Kute">
+        <h1 class="officers">
+            <a href="mailto:26kutei@students.bcsc.k12.in.us">Co-VP: Ishita Kute</a>
+        </h1>
+    </div>
+
+    <!-- Harshil Gandhi's section -->
+    <div class="harshil">
+        <img src="images/Harshil.JPG" alt="Harshil Gandhi">
+        <h1 class="officers">
+            <a href="mailto:26gandhih@students.bcsc.k12.in.us">Secretary: Harshil Gandhi</a>
+        </h1>
+    </div>
+
+    <!-- Anyu Gong's section -->
+    <div class="anyu">
+        <img src="images/Anyu.JPG" alt="Anyu Gong">
+        <h1 class="officers">
+            <a href="mailto:26gonga@students.bcsc.k12.in.us">Media Specialist: Anyu Gong</a>
+        </h1>
+    </div>
+
+    <!-- Aniket Ghatge's section -->
+    <div class="aniket">
+        <img src="images/Aniket.JPG" alt="Aniket Ghatge">
+        <h1 class="officers">
+            <a href="mailto:26ghatgea@students.bcsc.k12.in.us">Treasurer: Aniket Ghatge</a>
+        </h1>
+    </div>
+
+    <!-- Mrs. Perry's section -->
+    <div class="perry">
+        <img src="images/perry.JPG" alt="Preetham">
+        <h1 class="officers">
+            <a href="mailto:perryn@bcsc.k12.in.us">Advisor: Mrs. Perry</a> <!-- Please add Mrs. Perry's email address -->
+        </h1>
+    </div>
+
+    
+        </div>
+
+    <!-- For Socials -->
+    <div class="social-section">
+        <a href="https://www.instagram.com/cnhs.environmental/?hl=en" target="_blank">
+            <img src="images/instagram.png" alt="Instagram Icon">
+            Instagram: @cnhs.environmental
+        </a>
+    </div>
+
+    <div class="social-section">
+        <a href="https://www.remind.com/join/cnenv" target="_blank">
+            <img src="images/remind.png" alt="Remind Icon">
+            Remind: @cnenv
+        </a>
+    </div>
+    
+    <div class="social-section">
+        <a href="https://www.parentsquare.com/join_group/CNHS_Environmental_Club" target="_blank">
+            <img src="images/ps.png" alt="Ps Icon">
+            Parent Square: Join Group “CNHS Environmental Club”
+        </a>
+    </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Add JavaScript to handle the menu toggle functionality
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
