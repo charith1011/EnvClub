@@ -38,3 +38,60 @@ flowchart TD
         S --> U["Flake8<br/>Code Linting"]
     end
 ```
+
+
+
+#Next One
+
+```mermaid
+flowchart TD
+    A["Citizen / User"] --> B["Flask Application"]
+
+    subgraph APP["Application Layer"]
+        B --> C["App Factory<br/>app/__init__.py"]
+        C --> D["Configuration<br/>config.py"]
+        C --> E["Flask Extensions"]
+        C --> F["Blueprint Registration"]
+
+        E --> G["SQLAlchemy ORM"]
+        E --> H["Flask-Migrate"]
+        E --> I["Flask-Login"]
+        E --> J["Flask-Limiter"]
+
+        F --> K["Auth Blueprint<br/>auth.py"]
+        F --> L["Jokes Blueprint<br/>jokes.py"]
+        F --> M["Pages Blueprint<br/>pages.py"]
+
+        M --> N["WTForms / Flask-WTF<br/>forms.py"]
+        N --> O["Front Desk Templates<br/>login, register, add joke,<br/>change password, index, my jokes"]
+    end
+
+    K --> G
+    L --> G
+    M --> G
+
+    subgraph DATA["Database Layer"]
+        G --> P["Models<br/>models.py"]
+        P --> Q["SQLite Database<br/>moj.db"]
+        H --> R["Alembic Migrations"]
+        R --> Q
+    end
+
+    subgraph LOGGING["Logging / Audit Layer"]
+        M --> S["log_event()<br/>app/logging_config.py"]
+        S --> T["Named moj Logger"]
+        T --> U["Structured JSON Formatter"]
+        U --> V["stdout Stream"]
+        V --> W["Environment / Log Consumer"]
+    end
+
+    subgraph CI["Continuous Integration"]
+        X["GitHub Push / Pull Request"] --> Y["GitHub Actions<br/>ci.yml"]
+        Y --> Z["Self-Hosted Runner"]
+
+        Z --> AA["Test Job<br/>pytest"]
+        Z --> AB["Lint Job<br/>flake8"]
+        Z --> AC["Security Job<br/>pip-audit + Bandit"]
+    end
+```
+
