@@ -1,97 +1,98 @@
 
 ```mermaid
 flowchart TD
-    A["User / Client"] --> B["Flask Application"]
-
-    subgraph APP["Application Layer"]
-        B --> C["App Factory<br/>app/__init__.py"]
-        C --> D["Configuration<br/>config.py"]
-        C --> E["Flask Extensions"]
-        C --> F["Blueprint Registration"]
-
-        E --> G["SQLAlchemy ORM"]
-        E --> H["Flask-Migrate"]
-        E --> I["Flask-Login"]
-
-        F --> J["Auth Blueprint<br/>auth.py"]
-        F --> K["Jokes Blueprint<br/>jokes.py"]
-        F --> L["Pages Blueprint<br/>pages.py"]
-        
-        L --> M["HTML Templates<br/>base.html / index.html"]
+    subgraph APP["Application Initialization"]
+        A["App Factory<br/>app/__init__.py"]
+        B["Configuration<br/>config.py"]
+        C["Flask Extensions<br/>SQLAlchemy / Flask-Migrate / Flask-Login"]
+        D["Register Blueprints"]
+        A --> B
+        A --> C
+        A --> D
     end
 
-    J --> G
-    K --> G
-    L --> G
+    subgraph REQUESTS["Request Handling"]
+        U["User / API Client"] --> F["Flask Application"]
+        F --> E["Registered Blueprints"]
+        E --> G["Auth Blueprint<br/>auth.py"]
+        E --> H["Jokes Blueprint<br/>jokes.py"]
+        E --> I["Pages Blueprint<br/>pages.py"]
+        I --> J["HTML Templates<br/>base.html / index.html"]
+    end
 
-    subgraph DATA["Database Layer"]
-        G --> N["Models<br/>models.py"]
-        N --> O["SQLite Database<br/>moj.db"]
-        H --> P["Alembic Migrations"]
-        P --> O
+    G --> K["SQLAlchemy ORM"]
+    H --> K
+    I --> K
+
+    subgraph DATABASE["Database Layer"]
+        K --> L["Models<br/>User / Joke"]
+        L --> M[("SQLite<br/>moj.db")]
+        N["Flask-Migrate / Alembic"] --> M
     end
 
     subgraph CI["Continuous Integration"]
-        Q["GitHub Push / Pull Request"] --> R["GitHub Actions Workflow<br/>ci.yml"]
-        R --> S["Self-Hosted Runner"]
-        S --> T["Pytest<br/>Automated Tests"]
-        S --> U["Flake8<br/>Code Linting"]
+        O["GitHub Push / Pull Request"] --> P["GitHub Actions"]
+        P --> Q["Self-Hosted Runner"]
+        Q --> R["Test Job<br/>pytest"]
+        Q --> S["Lint Job<br/>flake8"]
     end
 ```
 
 
-
-#Next One
 
 ```mermaid
 flowchart TD
-    A["Citizen / User"] --> B["Flask Application"]
-
-    subgraph APP["Application Layer"]
-        B --> C["App Factory<br/>app/__init__.py"]
-        C --> D["Configuration<br/>config.py"]
-        C --> E["Flask Extensions"]
-        C --> F["Blueprint Registration"]
-
-        E --> G["SQLAlchemy ORM"]
-        E --> H["Flask-Migrate"]
-        E --> I["Flask-Login"]
-        E --> J["Flask-Limiter"]
-
-        F --> K["Auth Blueprint<br/>auth.py"]
-        F --> L["Jokes Blueprint<br/>jokes.py"]
-        F --> M["Pages Blueprint<br/>pages.py"]
-
-        M --> N["WTForms / Flask-WTF<br/>forms.py"]
-        N --> O["Front Desk Templates<br/>login, register, add joke,<br/>change password, index, my jokes"]
+    subgraph APP["Application Initialization"]
+        A["App Factory<br/>app/__init__.py"]
+        B["Configuration<br/>config.py"]
+        C["Flask Extensions<br/>SQLAlchemy / Flask-Migrate / Flask-Login"]
+        D["Flask-Limiter"]
+        E["Blueprint Registration"]
+        F["CLI Registration<br/>app/cli.py"]
+        A --> B
+        A --> C
+        A --> D
+        A --> E
+        A --> F
     end
 
-    K --> G
-    L --> G
-    M --> G
+    subgraph REQUESTS["Request Handling"]
+        U["Citizen / User"] --> G["Flask Application"]
+        G --> H["Registered Blueprints"]
+        H --> I["Auth Blueprint<br/>auth.py"]
+        H --> J["Jokes Blueprint<br/>jokes.py"]
+        H --> K["Pages Blueprint<br/>pages.py"]
 
-    subgraph DATA["Database Layer"]
-        G --> P["Models<br/>models.py"]
-        P --> Q["SQLite Database<br/>moj.db"]
-        H --> R["Alembic Migrations"]
-        R --> Q
+        I --> L["JSON Authentication API"]
+        J --> M["Joke API / Rate Limiting"]
+        K --> N["Flask-WTF Forms<br/>forms.py"]
+        N --> O["Front Desk Templates<br/>login / register / add joke<br/>change password / index / my jokes"]
+    end
+
+    subgraph DATABASE["Database Layer"]
+        I --> P["SQLAlchemy ORM"]
+        J --> P
+        K --> P
+        P --> Q["Models<br/>User / Joke"]
+        Q --> R[("SQLite<br/>moj.db")]
+        S["Flask-Migrate / Alembic"] --> R
+        F --> Q
+        F -. "Assigns moderator role" .-> Q
     end
 
     subgraph LOGGING["Logging / Audit Layer"]
-        M --> S["log_event()<br/>app/logging_config.py"]
-        S --> T["Named moj Logger"]
-        T --> U["Structured JSON Formatter"]
-        U --> V["stdout Stream"]
-        V --> W["Environment / Log Consumer"]
+        K --> T["log_event()<br/>logging_config.py"]
+        T --> V["Named moj Logger"]
+        V --> W["JSON Formatter"]
+        W --> X["stdout Stream"]
+        X --> Y["Environment / Log Consumer<br/>External routing and storage"]
     end
 
     subgraph CI["Continuous Integration"]
-        X["GitHub Push / Pull Request"] --> Y["GitHub Actions<br/>ci.yml"]
-        Y --> Z["Self-Hosted Runner"]
-
-        Z --> AA["Test Job<br/>pytest"]
-        Z --> AB["Lint Job<br/>flake8"]
-        Z --> AC["Security Job<br/>pip-audit + Bandit"]
+        Z["GitHub Push / Pull Request"] --> AA["GitHub Actions"]
+        AA --> AB["Self-Hosted Runner"]
+        AB --> AC["Test Job<br/>pytest"]
+        AB --> AD["Lint Job<br/>flake8"]
+        AB --> AE["Security Job<br/>pip-audit + Bandit"]
     end
 ```
-
